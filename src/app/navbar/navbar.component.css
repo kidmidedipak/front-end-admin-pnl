@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: -8px;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #662671;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo {
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.user-icon {
+    position: relative;
+    cursor: pointer;
+}
+
+.logout-option {
+    display: none;
+    position: absolute;
+    background-color: white; 
+    
+    top: 50px;
+    right: 0;
+    z-index: 1;
+    border: 1px solid red;
+    padding: 10px;
+    border-radius: 10%;
+}
+
+.user-icon:hover .logout-option {
+    display: block;
+}
+
+a{
+    text-decoration: none;
+    color: red;
+}

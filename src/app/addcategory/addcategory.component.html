@@ -1,0 +1,24 @@
+<body>
+    <div class="form-container">
+        <h2>Add Category</h2>
+        <div class="form-group">
+            <label for="category-name">Category Name</label>
+            <input type="text" [(ngModel)]="obj.cname" id="category-name"  name="category-name" placeholder="Enter category name" required>
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <input type="text" [(ngModel)]="obj.description"  id="description" name="description" placeholder="Enter description" required>
+        </div>
+        <div class="form-group">
+            <label for="status">Status</label>
+            <select id="status" [(ngModel)]="obj.status" name="status"  >
+                <option value="Active"   >Active</option>
+                <option value="Inactive">Inactive</option>
+            </select>
+        </div>
+        <div class="button-group">
+            <button class="cancel-btn" (click)="cancel()">Cancel</button>
+            <button (click)="save()">Save</button>
+        </div>
+    </div>
+</body>

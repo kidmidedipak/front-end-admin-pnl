@@ -1,0 +1,18 @@
+ 
+<body>
+    <div class="container">
+        <img src="./assets/logo.png" alt="Logo" class="logo">
+        <p>Welcome to Digitalflake Admin</p>
+         
+            <div class="form-group">
+                <label for="username">Email</label>
+                <input type="text" id="username" [(ngModel)]="obj.pname" name="username" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" [(ngModel)]="obj.packsize" name="password" placeholder="Your Password" required>
+            </div>
+            <a routerLink="/forgetpass">forgot password?</a><br><br>
+            <button class="btn" type="submit" (click)="sign()">Sign In</button>
+    </div>
+</body>

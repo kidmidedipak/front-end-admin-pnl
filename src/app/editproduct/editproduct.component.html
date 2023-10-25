@@ -1,0 +1,41 @@
+<body>
+    <div class="form-container">
+        <h2>Add Product</h2>
+        <div class="form-group">
+            <label for="category">Category Name</label>
+            <select id="category" [(ngModel)]="obj.cid" name="category" >
+                <option value="0" disabled>Select Category</option> 
+                <option *ngFor="let item of catearr;" value="{{item.id}}">{{item.cname}}</option> 
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="productName">Product Name</label>
+            <input type="text" [(ngModel)]="obj.pname" id="productName" name="productName" required>
+        </div>
+        <div class="form-group">
+            <label for="packSize">Pack Size</label>
+            <input type="text" [(ngModel)]="obj.packsize" id="packSize" name="packSize" required>
+        </div>
+        <div class="form-group">
+            <label for="mrp">MRP</label>
+            <input type="number" [(ngModel)]="obj.mrp" id="mrp" name="mrp" required>
+        </div>
+        <div class="form-group">
+            <img src="{{imgurl}}{{obj.image}}" *ngIf="ischngImg==0" alt="image">
+            <label for="productImage">Product Image</label>
+            <input type="file" accept="image/*" (change)="onFileSelected($event)" [(ngModel)]="obj.image" id="productImage" name="productImage" accept="image/*">
+            <img  [src]="selectedImageUrl" *ngIf="selectedImage"  alt="Selected Image" />
+        </div>
+        <div class="form-group">
+            <label for="status">Status</label>
+            <select id="status"  [(ngModel)]="obj.status"   name="status">
+                <option value="Active" selected >Active</option>
+                <option value="Inactive">Inactive</option>
+            </select>
+        </div>
+        <div class="form-buttons">
+            <button class="cancel">Cancel</button>
+            <button class="save" (click)="save()">update</button>
+        </div>
+    </div> 
+</body>

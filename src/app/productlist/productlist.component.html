@@ -1,0 +1,42 @@
+<body>
+    
+    <header>
+        <div class="category-label">Product</div>
+        <div class="search"> 
+            <input type="text" #search (keyup)="short(search.value)" placeholder="Search...">
+        </div>
+        <button id="add-category" routerLink="/home/addprodcuct">Add Product</button>
+    </header>
+    <table>
+        <thead>
+            <tr>   
+                <th>ID  </th>
+                <th>Name</th>
+                <th>Pack Size</th>
+                <th>Category</th>
+                <th>MRP</th>
+                <th>Image</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead> 
+        <tbody >
+            <tr *ngFor="let item of prodarr; let i = index" >
+           <td>{{i+1}}</td>
+           <td>{{item.pname}}</td>
+           <td>{{item.packsize}}</td>
+           <td >
+            {{check(item.cid)}}
+          </td>
+           <td> <b>₹ {{item.mrp}} </b> </td>
+           <td><img src="{{imgurl}}{{item.image}}" alt="image"></td>
+           <td [ngClass]="{'active': item.status=='Active',  'inactive': item.status=='Inactive'}">{{item.status}}</td>
+           
+           <td>
+             <img class="btn" (click)="edit(item.id)" src="./assets/edit.png" alt="button"> 
+            <img class="btn" (click)="deleteprod(item.id)" src="./assets/delete.png" alt="button">
+        </td>
+           </tr>            
+        </tbody>
+    </table>
+</body>
